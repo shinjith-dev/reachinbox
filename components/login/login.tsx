@@ -1,8 +1,17 @@
+"use client";
 import Image from "next/image";
 import { Button } from "../ui/button";
 import Link from "next/link";
+import { useEffect } from "react";
+import { googleLogin } from "@/lib/queries/auth";
 
 export default function Login() {
+  useEffect(() => {
+    googleLogin()
+      .then((data) => console.log(data))
+      .catch((err) => console.log(err));
+  });
+
   return (
     <div className="flex h-screen w-screen items-center justify-center">
       <div className="w-[min(99vw,460px)] rounded-[17px] border border-border-1 bg-gradient-to-br from-[#111214] to-[#121212] p-10 pt-6 text-center">
