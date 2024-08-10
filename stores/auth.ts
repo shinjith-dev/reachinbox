@@ -1,13 +1,22 @@
-import { create } from "zustand";
+import { create, createStore } from "zustand";
 
-interface AuthState {
+export type AuthState = {
   token: string | null;
+};
+
+export type AuthActions = {
   update: (token: string) => void;
-}
+};
 
-const useAuth = create<AuthState>()((set) => ({
+export type AuthStore = AuthState & AuthActions;
+
+export const defaultInitState: AuthState = {
   token: null,
-  update: (token) => set(() => ({ token })),
-}));
+};
 
-export default useAuth;
+export const createAuthStore = (initState: AuthState = defaultInitState) => {
+  return createStore<AuthStore>()((set) => ({
+    ...initState,
+    update: (token) => set(() => ({ token })),
+  }));
+};

@@ -4,14 +4,14 @@ import { Button } from "../ui/button";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import { FRONTEND_URL } from "@/lib/config";
-import useAuth from "@/stores/auth";
 import { useEffect } from "react";
+import { useAuthStore } from "@/hooks/use-auth-store";
 
 const GOOGLE_AUTH_URL = `https://hiring.reachinbox.xyz/api/v1/auth/google-login?redirect_to=${FRONTEND_URL}`;
 
 export default function Login() {
   const router = useRouter();
-  const { token, update } = useAuth();
+  const { token, update } = useAuthStore((state) => state);
   const searchParams = useSearchParams();
   const returnToken = searchParams.get("token");
 

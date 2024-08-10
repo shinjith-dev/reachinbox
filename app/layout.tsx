@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { openSans } from "@/lib/fonts";
 import { cn } from "@/lib/utils";
+import { AuthStoreProvider } from "@/providers/auth-provider";
 
 export const metadata: Metadata = {
   title: "ReachInbox",
@@ -20,7 +21,7 @@ export default function RootLayout({
           openSans.variable,
         )}
       >
-        {children}
+        <AuthStoreProvider>{children}</AuthStoreProvider>
       </body>
     </html>
   );
