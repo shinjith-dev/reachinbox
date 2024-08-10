@@ -1,10 +1,9 @@
-import { Button } from "@/components/ui/button";
+import Login from "@/components/login/login";
 
 export default function Home() {
   return (
     <main>
-      Hello nextjs
-      <Button>Get started</Button>
+      <Login />
     </main>
   );
 }
