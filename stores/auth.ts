@@ -1,4 +1,5 @@
-import { create, createStore } from "zustand";
+import { createStore } from "zustand";
+import { persist } from "zustand/middleware";
 
 export type AuthState = {
   token: string | null;
@@ -15,8 +16,13 @@ export const defaultInitState: AuthState = {
 };
 
 export const createAuthStore = (initState: AuthState = defaultInitState) => {
-  return createStore<AuthStore>()((set) => ({
-    ...initState,
-    update: (token) => set(() => ({ token })),
-  }));
+  return createStore<AuthStore>()(
+    persist(
+      (set) => ({
+        ...initState,
+        update: (token) => set(() => ({ token })),
+      }),
+      { name: "auth" },
+    ),
+  );
 };
