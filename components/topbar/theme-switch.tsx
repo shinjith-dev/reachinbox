@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 
 export default function ThemeSwitch() {
   const { mode: md, update } = useThemeStore((state) => state);
-  const [mode, setMode] = useState<"dark" | "light">("dark");
+  const [mode, setMode] = useState<"dark" | "light">(md ?? "dark");
 
   useEffect(() => {
     if (md === "dark") {
@@ -26,7 +26,7 @@ export default function ThemeSwitch() {
   return (
     <button
       onClick={toggleMode}
-      className="boder-[#343A40] relative h-[26px] w-12 rounded-full border bg-[#222426]"
+      className="relative h-[26px] w-12 rounded-full border border-table-border bg-table transition-all"
     >
       <span
         className={`absolute left-0 top-0 m-1 h-4 w-4 rounded-full bg-[#888686] transition-all duration-300 ${mode === "light" ? "translate-x-5" : ""}`}

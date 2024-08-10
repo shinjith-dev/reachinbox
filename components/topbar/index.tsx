@@ -3,7 +3,7 @@ import WSSwitch from "./ws-switch";
 
 export default function Topbar() {
   return (
-    <header className="flex justify-between border border-l-0 border-[#343A40] bg-[#1F1F1F] p-6">
+    <header className="flex justify-between border border-l-0 border-border-1 bg-surface-alt p-6 transition-all">
       <h4 className="font-bold">Onebox</h4>
 
       <div className="flex gap-4">

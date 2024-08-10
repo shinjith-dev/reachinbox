@@ -10,7 +10,7 @@ import { links } from "./links";
 
 export default function Sidebar() {
   return (
-    <div className="relative h-screen border-r border-[#343A40] bg-[#101113] px-5 py-7">
+    <div className="relative h-screen border-r border-border-1 bg-surface px-5 py-7 transition-all">
       <div className="mx-auto">
         <Image
           src="/images/logo.png"
@@ -29,12 +29,8 @@ export default function Sidebar() {
                 <Tooltip>
                   <TooltipTrigger>
                     <Link
-                      className="flex h-8 w-8 items-center justify-center rounded p-1.5"
+                      className={`flex h-8 w-8 items-center justify-center rounded p-1.5 transition-all ${l.label === "Inbox" ? "bg-[#E9EAEB] dark:bg-[#2F3030]" : "bg-transparent"}`}
                       href={l.url}
-                      style={{
-                        backgroundColor:
-                          l.label === "Inbox" ? "#2F3030" : "transparent",
-                      }}
                     >
                       <Image
                         src={`/icons/${l.icon}`}
@@ -56,7 +52,7 @@ export default function Sidebar() {
       </nav>
 
       <div className="absolute bottom-7 left-5">
-        <div className="flex h-9 w-9 items-center justify-center rounded-full bg-[#054F31]">
+        <div className="flex h-9 w-9 items-center justify-center rounded-full bg-[#054F31] text-white">
           SR
         </div>
       </div>

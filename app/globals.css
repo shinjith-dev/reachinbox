@@ -29,6 +29,12 @@
     --chart-3: 197 37% 24%;
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
+
+    --border-1: 0 0% 85%;
+    --surface: 0 0% 98%;
+    --surface-alt: 0 0% 100%;
+    --table: 220 7% 92%;
+    --table-border: 206 10% 87%;
   }
 
   .dark {
@@ -58,6 +64,10 @@
     --chart-5: 340 75% 55%;
 
     --border-1: 210 10% 23%;
+    --surface: 220 9% 7%;
+    --surface-alt: 0 0% 12%;
+    --table: 210 6% 14%;
+    --table-border: 210 10% 23%;
   }
 }
 
