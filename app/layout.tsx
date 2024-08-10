@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
-
-const inter = Inter({ subsets: ["latin"] });
+import { openSans } from "@/lib/fonts";
+import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = {
   title: "ReachInbox",
@@ -15,7 +14,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body
+        className={cn(
+          "min-h-screen bg-background font-sans antialiased",
+          openSans.variable,
+        )}
+      >
+        {children}
+      </body>
     </html>
   );
 }
