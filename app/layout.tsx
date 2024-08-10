@@ -3,6 +3,7 @@ import "./globals.css";
 import { openSans } from "@/lib/fonts";
 import { cn } from "@/lib/utils";
 import { AuthStoreProvider } from "@/providers/auth-provider";
+import { ThemeStoreProvider } from "@/providers/theme-provider";
 
 export const metadata: Metadata = {
   title: "ReachInbox",
@@ -14,14 +15,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en">
       <body
         className={cn(
           "min-h-screen bg-background font-sans antialiased",
           openSans.variable,
         )}
       >
-        <AuthStoreProvider>{children}</AuthStoreProvider>
+        <ThemeStoreProvider>
+          <AuthStoreProvider>{children}</AuthStoreProvider>
+        </ThemeStoreProvider>
       </body>
     </html>
   );
