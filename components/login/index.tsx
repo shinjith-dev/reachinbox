@@ -10,7 +10,7 @@ export default function Login() {
     <main className="flex h-screen w-screen items-center justify-center">
       <AuthVerify />
 
-      <div className="w-[min(99vw,460px)] rounded-[17px] border border-border-1 bg-gradient-to-br from-[#111214] to-[#121212] p-10 pt-6 text-center">
+      <div className="w-[min(99vw,460px)] rounded-[17px] border border-border-1 from-[#111214] to-[#121212] p-10 pt-6 text-center dark:bg-gradient-to-br">
         <h3 className="mb-6 font-semibold text-foreground xl:text-xl 2xl:text-2xl">
           Create a new account
         </h3>

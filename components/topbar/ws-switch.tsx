@@ -3,7 +3,7 @@ import Image from "next/image";
 export default function WSSwitch() {
   return (
     <div className="flex gap-2">
-      <h5 className="text-sm font-semibold">Tim's Workspace</h5>
+      <h5 className="text-sm font-semibold">Tim&apos;s Workspace</h5>
 
       <Image
         src="/icons/arrow-down.png"

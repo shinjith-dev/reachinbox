@@ -1,6 +1,10 @@
+"use client";
+
+import { useMails } from "@/lib/query-hooks/inbox";
+
 export default function MailList() {
-  return (
-    <div className="h-full w-[min(20vw,320px)] py-5 px-7 bg-surface">
-    </div>
-  )
+  const { data } = useMails();
+
+  console.log(data);
+  return <div className="h-full w-[320px] bg-surface px-7 py-5"></div>;
 }

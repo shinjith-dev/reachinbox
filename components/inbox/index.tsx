@@ -5,5 +5,5 @@ export default function Inbox() {
     <div className="flex h-full w-full">
       <MailList />
     </div>
-  )
+  );
 }
